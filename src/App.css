@@ -6,7 +6,13 @@ body {
 
 .app-body {
   background: white;
-  min-height: calc(100vh - 61px);
+  min-height: calc(100vh - 60px);
   margin: 20px;
   padding-bottom: 20px;
+}
+
+@media (max-width: 576px) {
+  .app-body {
+    margin: 0px;
+  }
 }
