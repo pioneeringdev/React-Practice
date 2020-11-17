@@ -1,0 +1,7 @@
+.loader {
+  height: 120px;
+}
+
+.loader .loader-spinner {
+  margin-top: 20px;
+}
