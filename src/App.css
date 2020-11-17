@@ -1,0 +1,12 @@
+body {
+  background-color: #f1f5f9;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.app-body {
+  background: white;
+  min-height: calc(100vh - 61px);
+  margin: 20px;
+  padding-bottom: 20px;
+}
