@@ -1,0 +1,55 @@
+.show-wrapper {
+  display: flex;
+  margin: 50px;
+  background-color: #f1f5f9;
+  border-radius: 5px;
+}
+
+.show-image {
+  width: 200px;
+  height: 300px;
+  border-radius: 5px;
+  margin: -20px 20px;
+}
+
+@media (max-width: 576px) {
+  .show-wrapper {
+    width: 100%;
+    margin: 50px 0px;
+    display: block;
+  }
+  .show-image  {
+    width: calc(100% - 40px);
+  }
+}
+.show-name {
+  text-align: left;
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #0e2236;
+}
+
+.show-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.show-summary {
+  text-align: left;
+  font-family: sans-serif;
+  color: #565f69;
+}
+
+.show-episodes {
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #091b2d;
+  color: white;
+  height: 40px;
+  width: 125px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
