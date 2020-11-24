@@ -1,29 +1,42 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
+// import debounce from 'lodash.debounce';
+
+import useDebounce from '../../hooks/useDebounce';
+
 import './input.css';
 import searchImage from '../../assets/search.svg';
 
-export default function Input({ search, updateSearch }) {
+export default function Input({ loading, search, updateSearch }) {
 
-  const [value, setValue] = useState(search);
+  const [keyword, setKeyword] = useState(search);
+  const debouncedKeyword = useDebounce(keyword, 500);
+
+  useEffect(() => {
+    updateSearch(keyword);
+  }, [debouncedKeyword]);
+
   const handleChange = (e) => {
-    setValue(e.target.value);
-  }
+    setKeyword(e.target.value);
+  };
+
   const handleClick = () => {
-    updateSearch(value)
+    updateSearch(keyword);
   }
+  
   return (
     <div className="input-wrapper">
       <div className="input-control">
         <img src={searchImage} alt="search icon" className="search-icon" />
         <input
+          value={keyword}
           className="search-input"
-          value={value}
-          onChange={updateSearch}
           placeholder="Search show titles"
           onChange={handleChange}
-          />
+        />
       </div>
-      <button className="search-button" onClick={handleClick}>Search</button>
+      <button className="search-button" onClick={handleClick}>
+        {loading ? 'Loading...' : 'Search'}
+      </button>
     </div>
   )
 }

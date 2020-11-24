@@ -5,9 +5,8 @@ import Show from './Show';
 
 const SHOWS_URL = 'https://api.tvmaze.com/search/shows?q=';
 
-export default function ShowList({ search }) {
+export default function ShowList({ search, loading, setLoading }) {
   const [shows, setShows] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
